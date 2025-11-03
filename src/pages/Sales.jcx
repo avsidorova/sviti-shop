@@ -1,0 +1,70 @@
+import { getDiscountedProducts, calculateSavings } from '../data/products';
+import ProductCard from '../components/ProductCard';
+import './Sales.css';
+
+function Sales() {
+  const discountedProducts = getDiscountedProducts();
+  const totalSavings = discountedProducts.reduce((total, product) => {
+    return total + calculateSavings(product);
+  }, 0);
+
+  return (
+    <div className="sales-page">
+      <div className="sales-container">
+        <div className="sales-header">
+          <h1 className="sales-title">Акции и скидки</h1>
+          <p className="sales-subtitle">
+            Сэкономьте до {Math.max(...discountedProducts.map(p => p.discount || 0))}% на selected товарах
+          </p>
+          
+          <div className="savings-banner">
+            <div className="savings-amount">
+              Общая экономия: <span>{totalSavings} ₽</span>
+            </div>
+            <p>Не упустите возможность приобрести стильные костюмы по выгодным ценам!</p>
+          </div>
+        </div>
+
+        <div className="discounted-products">
+          <h2>Товары со скидкой</h2>
+          
+          {discountedProducts.length > 0 ? (
+            <div className="products-grid">
+              {discountedProducts.map(product => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div className="no-discounts">
+              <h3>Сейчас нет активных акций</h3>
+              <p>Следите за обновлениями, новые скидки появляются регулярно!</p>
+            </div>
+          )}
+        </div>
+
+        <div className="sales-info">
+          <h3>Почему покупать у нас выгодно?</h3>
+          <div className="benefits-grid">
+            <div className="benefit">
+              <div className="benefit-icon">🎁</div>
+              <h4>Регулярные акции</h4>
+              <p>Постоянные скидки на коллекции предыдущего сезона</p>
+            </div>
+            <div className="benefit">
+              <div className="benefit-icon">⭐</div>
+              <h4>Скидки постоянным клиентам</h4>
+              <p>Накопительная система скидок для наших покупателей</p>
+            </div>
+            <div className="benefit">
+              <div className="benefit-icon">🚚</div>
+              <h4>Бесплатная доставка</h4>
+              <p>При заказе от 5000 рублей доставка бесплатна</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Sales;

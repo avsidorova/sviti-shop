@@ -1,0 +1,205 @@
+.catalog-page {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FFF8F8 0%, #FFFFFF 100%);
+  min-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.catalog-page {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FFF8F8 0%, #FFFFFF 100%);
+  min-height: 100vh;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.catalog-title {
+  text-align: center;
+  color: #FF6B8B;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-family: 'Furore', sans-serif;
+}
+
+.catalog-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-section, .sort-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.filter-section h3, .sort-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-family: 'Furore', sans-serif;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  border: 2px solid #FFD1DC;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Furore', sans-serif;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.category-btn:hover {
+  border-color: #FF6B8B;
+  color: #FF6B8B;
+}
+
+.category-btn.active {
+  background: #FF6B8B;
+  color: white;
+  border-color: #FF6B8B;
+}
+
+.sort-select {
+  padding: 10px 15px;
+  border: 2px solid #FFD1DC;
+  border-radius: 8px;
+  background: white;
+  font-family: 'Furore', sans-serif;
+  color: #333;
+  width: 100%;
+  max-width: 250px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.products-count {
+  text-align: center;
+  color: #666;
+  font-family: 'Furore', sans-serif;
+  padding: 20px;
+  border-top: 1px solid #FFD1DC;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .catalog-controls {
+    flex-direction: column;
+  }
+  
+  .catalog-title {
+    font-size: 2rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Стили для поиска */
+.search-section {
+  flex: 2;
+  min-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #FFD1DC;
+  border-radius: 8px;
+  font-family: 'Furore', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #FF6B8B;
+  box-shadow: 0 0 0 3px rgba(255, 107, 139, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-results {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #FFD1DC;
+  font-family: 'Furore', sans-serif;
+  color: #666;
+  text-align: center;
+}
+
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 15px;
+  border: 2px solid #FFD1DC;
+}
+
+.no-products h3 {
+  color: #FF6B8B;
+  margin-bottom: 15px;
+  font-family: 'Furore', sans-serif;
+}
+
+.no-products p {
+  color: #666;
+  margin-bottom: 25px;
+  font-family: 'Furore', sans-serif;
+}
+
+.reset-filters-btn {
+  background: #FF6B8B;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-family: 'Furore', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-filters-btn:hover {
+  background: #FF4B6B;
+  transform: translateY(-2px);
+}
+
+/* Адаптивность для новых элементов */
+@media (max-width: 768px) {
+  .catalog-controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .search-section, .filter-section, .sort-section {
+    min-width: 100%;
+  }
+}

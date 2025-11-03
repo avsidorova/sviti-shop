@@ -1,0 +1,233 @@
+.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 107, 139, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #FFD1DC;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 107, 139, 0.2);
+}
+
+.product-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ВРЕМЕННО: Яркий ценник для теста */
+.product-price {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #FF6B8B !important; /* Черный фон */
+  color: #FFFFFF !important; /* Белый текст */
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-family: 'Furore', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  z-index: 2;
+}
+
+/* Бейдж скидки */
+.discount-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #2ECC71;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-family: 'Furore', sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.discount-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.current-price {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.original-price {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+
+.savings {
+  color: #2ECC71;
+  font-size: 0.9rem;
+  font-family: 'Furore', sans-serif;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background: rgba(46, 204, 113, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-name {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: 'Furore', sans-serif;
+  line-height: 1.3;
+}
+
+.product-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-family: 'Furore', sans-serif;
+}
+
+.product-colors {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: 'Furore', sans-serif;
+  font-size: 0.9rem;
+}
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: inline-block;
+}
+
+.more-colors {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.product-sizes {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-family: 'Furore', sans-serif;
+}
+
+.view-product-btn {
+  display: block;
+  text-align: center;
+  background: #FF6B8B;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: 'Furore', sans-serif;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.view-product-btn:hover {
+  background: #FF4B6B;
+  transform: translateY(-2px);
+}
+
+/* Стили для быстрого добавления в корзину */
+.quick-add-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 107, 139, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.quick-add-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 80%;
+}
+
+.quick-select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Furore', sans-serif;
+  font-size: 0.9rem;
+}
+
+.quick-add-btn {
+  padding: 10px;
+  background: white;
+  color: #FF6B8B;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Furore', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quick-add-btn:hover {
+  background: #FFF0F5;
+  transform: translateY(-2px);
+}
+/* Кнопка избранного */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #FF6B8B;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+}
+
+.favorite-btn:hover {
+  background: #FF6B8B;
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background: #FF6B8B;
+}
+
