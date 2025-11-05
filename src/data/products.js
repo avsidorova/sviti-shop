@@ -3,13 +3,13 @@ export const products = [
     id: 1,
     name: "Плюшевый женский костюм оверсайз",
     price: 10261,
-    originalPrice: 12061, // Добавляем оригинальную цену для скидки
+    originalPrice: 12061,
     category: "повседневный",
-    image: "https://via.placeholder.com/300x400/FFE4E1/FF6B8B?text=Плюшевый+оверсайз",
+    image: "/images/1.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["бежевый", "красный", "серый", "голубой", "черный", "коричневый", "молочный"],
     description: "Уютный плюшевый костюм оверсайз для максимального комфорта",
-    discount: 15 // Процент скидки
+    discount: 15
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const products = [
     price: 3668,
     originalPrice: 4668,
     category: "летний",
-    image: "https://via.placeholder.com/300x400/FFF0F5/FF6B8B?text=Летний+с+шортами",
+    image: "/images/2.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["красный", "бежевый", "розовый", "голубой", "коричневый", "черный", "серый"],
     description: "Легкий летний костюм с удобными шортами",
@@ -28,7 +28,7 @@ export const products = [
     name: "Костюм женский трикотажный весенний",
     price: 5785,
     category: "весенний",
-    image: "https://via.placeholder.com/300x400/FFD1DC/FF6B8B?text=Трикотажный+весенний",
+    image: "/images/3.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["красный", "белый", "коричневый"],
     description: "Элегантный трикотажный костюм для весеннего сезона"
@@ -39,7 +39,7 @@ export const products = [
     price: 2910,
     originalPrice: 3910,
     category: "летний",
-    image: "https://via.placeholder.com/300x400/FADADD/FF6B8B?text=С+принтом",
+    image: "/images/4.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["коричневый", "красный", "айвори", "розовый", "бежевый"],
     description: "Стильный костюм с рубашкой с принтом и шортами",
@@ -50,7 +50,7 @@ export const products = [
     name: "Костюм кимоно летний",
     price: 3036,
     category: "летний",
-    image: "https://via.placeholder.com/300x400/FFB6C1/FF6B8B?text=Кимоно+летнее",
+    image: "/images/5.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["красный", "айвори", "коричневый", "бежевый"],
     description: "Легкое кимоно для жарких летних дней"
@@ -61,7 +61,7 @@ export const products = [
     price: 2182,
     originalPrice: 3182,
     category: "платья",
-    image: "https://via.placeholder.com/300x400/FFFFFF/FF6B8B?text=Платье+с+кружевом",
+    image: "/images/6.png", // ← Замените на ваше фото
     sizes: ["S-42", "M-46"],
     colors: ["белый"],
     description: "Нежное летнее платье с кружевными деталями",
@@ -71,21 +71,8 @@ export const products = [
 
 export const categories = [
   "все",
-  "повседневный",
-  "летний", 
+  "повседневный", 
+  "летний",
   "весенний",
   "платья"
 ];
-
-// Функция для получения товаров со скидкой
-export const getDiscountedProducts = () => {
-  return products.filter(product => product.discount);
-};
-
-// Функция для расчета экономии
-export const calculateSavings = (product) => {
-  if (product.originalPrice && product.discount) {
-    return product.originalPrice - product.price;
-  }
-  return 0;
-};

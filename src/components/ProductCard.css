@@ -15,14 +15,20 @@
 
 .product-image-container {
   position: relative;
-  height: 250px;
+  height: 300px; /* Увеличиваем высоту для лучшего отображения */
   overflow: hidden;
+  background: #f8f9fa; /* Фон на случай, если изображение грузится */
 }
 
 .product-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Важно: обрезает изображение чтобы заполнить контейнер */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05); /* Легкое увеличение при наведении */
 }
 
 /* ВРЕМЕННО: Яркий ценник для теста */

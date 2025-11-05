@@ -1,126 +1,76 @@
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
+import { TruckIcon, ReturnIcon, DressIcon, GiftIcon } from '../components/Icons';
+import './Home.css';
 
 function Home() {
   // Берем 3 популярных товара для показа на главной
   const featuredProducts = products.slice(0, 3);
 
   return (
-    <div style={{ 
-      minHeight: 'calc(100vh - 80px)', 
-      padding: '40px 20px', 
-      background: 'linear-gradient(135deg, #FFF0F5 0%, #FFFFFF 100%)',
-      width: '100%'
-    }}>
+    <>
+      {/* Герой секция с фото фоном */}
+      <div className="hero-section">
+        <div className="hero-overlay">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              SVITI
+            </h1>
+            
+            <p className="hero-subtitle">
+              Элегантность в каждой детали
+            </p>
+            
+            <Link 
+              to="/catalog"
+              className="hero-cta-button"
+            >
+              Смотреть коллекцию
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Основной контент */}
       <div style={{ 
         maxWidth: '1200px', 
         margin: '0 auto',
-        width: '100%'
+        width: '100%',
+        padding: '40px 20px'
       }}>
-        {/* Герой секция */}
-        <div style={{
-          textAlign: 'center',
-          padding: '60px 20px',
-          background: 'linear-gradient(135deg, #FF6B8B 0%, #FF8FA3 100%)',
-          borderRadius: '20px',
-          color: 'white',
-          marginBottom: '60px'
-        }}>
-          <h1 style={{ 
-            fontSize: '3.5rem',
-            fontWeight: 'normal',
-            letterSpacing: '3px',
-            fontFamily: "'Furore', sans-serif",
-            marginBottom: '20px'
-          }}>
-            SVITI
-          </h1>
-          
-          <p style={{ 
-            fontSize: '1.3rem',
-            fontFamily: "'Furore', sans-serif",
-            letterSpacing: '1px',
-            marginBottom: '30px',
-            opacity: 0.9
-          }}>
-            Элегантность в каждой детали
-          </p>
-          
-          <Link 
-            to="/catalog"
-            style={{
-              display: 'inline-block',
-              background: 'white',
-              color: '#FF6B8B',
-              textDecoration: 'none',
-              padding: '15px 35px',
-              borderRadius: '30px',
-              fontFamily: "'Furore', sans-serif",
-              fontSize: '1.1rem',
-              transition: 'all 0.3s ease',
-              border: '2px solid white'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = 'transparent';
-              e.target.style.color = 'white';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = 'white';
-              e.target.style.color = '#FF6B8B';
-            }}
-          >
-            Смотреть коллекцию
-          </Link>
-        </div>
-
+        
         {/* Преимущества */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '25px',
-          marginBottom: '60px',
-          flexWrap: 'wrap'
-        }}>
-          <div style={{
-            border: '1px solid #FFD1DC',
-            padding: '25px',
-            borderRadius: '20px',
-            width: '250px',
-            backgroundColor: 'white',
-            boxShadow: '0 4px 15px rgba(255, 107, 139, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>🚚</div>
-            <h3 style={{ color: '#FF6B8B', marginBottom: '10px', fontFamily: "'Furore', sans-serif" }}>Бесплатная доставка</h3>
-            <p style={{ color: '#888', fontSize: '14px', fontFamily: "'Furore', sans-serif" }}>При заказе от 5000₽</p>
+        <div className="benefits-section">
+          <div className="benefit-card">
+            <div className="benefit-icon">
+              <TruckIcon size={32} />
+            </div>
+            <h3>Бесплатная доставка</h3>
+            <p>При заказе от 5000₽</p>
           </div>
           
-          <div style={{
-            border: '1px solid #FFD1DC',
-            padding: '25px',
-            borderRadius: '20px',
-            width: '250px',
-            backgroundColor: 'white',
-            boxShadow: '0 4px 15px rgba(255, 107, 139, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>↩️</div>
-            <h3 style={{ color: '#FF6B8B', marginBottom: '10px', fontFamily: "'Furore', sans-serif" }}>Легкий возврат</h3>
-            <p style={{ color: '#888', fontSize: '14px', fontFamily: "'Furore', sans-serif" }}>В течение 14 дней</p>
+          <div className="benefit-card">
+            <div className="benefit-icon">
+              <ReturnIcon size={32} />
+            </div>
+            <h3>Легкий возврат</h3>
+            <p>В течение 14 дней</p>
           </div>
           
-          <div style={{
-            border: '1px solid #FFD1DC',
-            padding: '25px',
-            borderRadius: '20px',
-            width: '250px',
-            backgroundColor: 'white',
-            boxShadow: '0 4px 15px rgba(255, 107, 139, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{ fontSize: '2rem', marginBottom: '15px' }}>👗</div>
-            <h3 style={{ color: '#FF6B8B', marginBottom: '10px', fontFamily: "'Furore', sans-serif" }}>Идеальная посадка</h3>
-            <p style={{ color: '#888', fontSize: '14px', fontFamily: "'Furore', sans-serif" }}>Размеры S-42 / M-46</p>
+          <div className="benefit-card">
+            <div className="benefit-icon">
+              <DressIcon size={32} />
+            </div>
+            <h3>Идеальная посадка</h3>
+            <p>Размеры S-42 / M-46</p>
+          </div>
+
+          <div className="benefit-card">
+            <div className="benefit-icon">
+              <GiftIcon size={32} />
+            </div>
+            <h3>Подарочная упаковка</h3>
+            <p>Для каждого заказа</p>
           </div>
         </div>
 
@@ -264,7 +214,7 @@ function Home() {
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

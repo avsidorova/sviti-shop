@@ -1,0 +1,192 @@
+/* Герой секция с фото фоном */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background-image: url('/images/8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Затемнение для лучшей читаемости текста */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: normal;
+  letter-spacing: 4px;
+  font-family: 'Furore', sans-serif;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-family: 'Furore', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  background: rgba(255, 107, 139, 0.9);
+  color: white;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-family: 'Furore', sans-serif;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-cta-button:hover {
+  background: rgba(255, 107, 139, 1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 139, 0.3);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    letterSpacing: 2px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-cta-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Контейнер главной страницы */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Секция преимуществ */
+.benefits-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid #FFD1DC;
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 139, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 139, 0.15);
+  border-color: #FF6B8B;
+}
+
+.benefit-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.benefit-card h3 {
+  color: #FF6B8B;
+  margin-bottom: 10px;
+  font-family: 'Furore', sans-serif;
+  font-size: 1.2rem;
+}
+
+.benefit-card p {
+  color: #888;
+  font-size: 0.95rem;
+  font-family: 'Furore', sans-serif;
+  line-height: 1.4;
+}
+
+/* Адаптивность для преимуществ */
+@media (max-width: 768px) {
+  .benefits-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .benefit-card {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section {
+    grid-template-columns: 1fr;
+  }
+}

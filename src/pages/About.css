@@ -316,3 +316,35 @@
     padding: 25px;
   }
 }
+
+/* Стили для изображения размерной сетки */
+.size-guide-image {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.size-guide-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid #FFD1DC;
+  box-shadow: 0 8px 25px rgba(255, 107, 139, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.size-guide-img:hover {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  color: #666;
+  margin-top: 15px;
+  font-family: 'Furore', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Убираем старый placeholder */
+.image-placeholder {
+  display: none;
+}
